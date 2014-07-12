@@ -25,7 +25,7 @@ public class ConfigLoader {
                 String[] value = blocks.split(":");
                 IDValue.put(Integer.parseInt(value[0]), Integer.parseInt(value[1]));
             }catch(Exception ex){
-                TenJava.plugin.getLogger().info("Could not load block '" + blocks + "'. - Skipping...");
+                TenJava.plugin.getLogger().info("Could not load block '" + blocks + "'");
                 continue;
             }
         }
