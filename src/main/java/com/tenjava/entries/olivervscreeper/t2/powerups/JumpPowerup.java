@@ -1,19 +1,25 @@
-package com.tenjava.entries.olivervscreeper.t2.listeners;
+package com.tenjava.entries.olivervscreeper.t2.powerups;
 
 import com.tenjava.entries.olivervscreeper.t2.handlers.EnergyTracker;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created on 12/07/2014.
  *
  * @author OliverVsCreeper
  */
-public class PowerupListener implements Listener{
+public class JumpPowerup implements Listener{
+
+    List<Player> launched = new ArrayList<Player>();
 
     public boolean isHoldingTracker(Player p){
         if(p.getItemInHand() == null) return false;
@@ -30,17 +36,19 @@ public class PowerupListener implements Listener{
 
         EnergyTracker.usePoints(e.getPlayer(),25);
         e.getPlayer().setVelocity(e.getPlayer().getVelocity().setY(4));
+        launched.add(e.getPlayer());
+        playPowerupSound(e.getPlayer());
     }
 
     @EventHandler
-    public void onDamage(EntityDamageByEntityEvent e){
-        if(e.getEntity() instanceof Player) return;
-        if(!(e.getDamager() instanceof Player)) return;
-        if(!isHoldingTracker((Player) e.getDamager()));
-        if(!(EnergyTracker.getEnergy((Player) e.getDamager()) >= 80)) return;
+    public void onDamage(EntityDamageEvent e){
+        if(!(e.getEntity() instanceof Player)) return;
+        Player p = (Player) e.getEntity();
+        if(launched.contains(p)) launched.remove(p); e.setCancelled(true);
+    }
 
-        EnergyTracker.usePoints((Player) e.getDamager(),80);
-        e.getEntity().setFallDistance(500F);
+    public void playPowerupSound(Player p){
+        p.playSound(p.getLocation(), Sound.WITHER_SHOOT,2F,2F);
     }
 
 }

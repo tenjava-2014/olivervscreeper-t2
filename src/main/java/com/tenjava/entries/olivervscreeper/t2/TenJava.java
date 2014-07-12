@@ -1,13 +1,16 @@
 package com.tenjava.entries.olivervscreeper.t2;
 
-import com.tenjava.entries.olivervscreeper.t2.listeners.PlayerListener;
-import com.tenjava.entries.olivervscreeper.t2.listeners.PowerupListener;
+import com.tenjava.entries.olivervscreeper.t2.handlers.PlayerListener;
+import com.tenjava.entries.olivervscreeper.t2.powerups.InstaKillPowerup;
+import com.tenjava.entries.olivervscreeper.t2.powerups.JumpPowerup;
+import com.tenjava.entries.olivervscreeper.t2.powerups.ShootPowerup;
 import com.tenjava.entries.olivervscreeper.t2.utils.ChatUtils;
 import com.tenjava.entries.olivervscreeper.t2.utils.ConfigLoader;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapelessRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -29,8 +32,7 @@ public class TenJava extends JavaPlugin {
         plugin = this; //Save plugin for other classes.
         Bukkit.getPluginManager()
                 .registerEvents(new PlayerListener(),this); //Register listener
-        Bukkit.getPluginManager()
-                .registerEvents(new PowerupListener(),this); //Register listener
+        registerPowerups();
 
         //Load config
         ConfigLoader.loadConfig(getConfig());
@@ -52,6 +54,16 @@ public class TenJava extends JavaPlugin {
         Sr.addIngredient(Material.STICK); //Add ingredients
         Sr.addIngredient(Material.APPLE);
         Bukkit.addRecipe(Sr); //Add recipe
+    }
+
+    public void registerPowerups(){
+        registerPowerup(new InstaKillPowerup());
+        registerPowerup(new JumpPowerup());
+        registerPowerup(new ShootPowerup());
+    }
+
+    public void registerPowerup(Object classObject){
+        Bukkit.getPluginManager().registerEvents((Listener) classObject,this);
     }
 
 }

@@ -1,12 +1,12 @@
-package com.tenjava.entries.olivervscreeper.t2.listeners;
+package com.tenjava.entries.olivervscreeper.t2.handlers;
 
-import com.tenjava.entries.olivervscreeper.t2.handlers.EnergyTracker;
 import com.tenjava.entries.olivervscreeper.t2.utils.ChatUtils;
 import com.tenjava.entries.olivervscreeper.t2.utils.ConfigLoader;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
@@ -38,6 +38,7 @@ public class PlayerListener implements Listener{
         if(!p.getItemInHand().getType()
                 .equals(Material.STICK)) return;
         if(!p.getItemInHand().getItemMeta().hasEnchants()) return;
+        if(!e.getAction().equals(Action.RIGHT_CLICK_AIR) && !e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) return;
 
         //Send player message with energy.
         ChatUtils.sendMSG(p, "Your Energy Level: " +

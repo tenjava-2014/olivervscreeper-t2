@@ -24,14 +24,14 @@ public class EnergyTracker {
         if(energyLevels.containsKey(p.getName())){
             Integer newEnergy = energyLevels.get(p.getName()) + energy;
             energyLevels.remove(p.getName());
-            energyLevels.put(p.getName(),newEnergy);
+            energyLevels.put(p.getName(), newEnergy);
         }else{
-            energyLevels.put(p.getName(),energy);
+            energyLevels.put(p.getName(), energy);
         }
     }
 
     public static void playNotificationSound(Player p){
-        p.playSound(p.getLocation(), Sound.CAT_MEOW,1,1);
+        p.playSound(p.getLocation(), Sound.CLICK, 1F, 1F);
     }
 
     public static int getEnergy(Player p){
