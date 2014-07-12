@@ -1,7 +1,11 @@
 package com.tenjava.entries.olivervscreeper.t2;
 
+import com.tenjava.entries.olivervscreeper.t2.handlers.CurseHandler;
 import com.tenjava.entries.olivervscreeper.t2.handlers.PlayerListener;
-import com.tenjava.entries.olivervscreeper.t2.powerups.*;
+import com.tenjava.entries.olivervscreeper.t2.powerups.FlyPowerup;
+import com.tenjava.entries.olivervscreeper.t2.powerups.InstaKillPowerup;
+import com.tenjava.entries.olivervscreeper.t2.powerups.JumpPowerup;
+import com.tenjava.entries.olivervscreeper.t2.powerups.ShootPowerup;
 import com.tenjava.entries.olivervscreeper.t2.utils.ChatUtils;
 import com.tenjava.entries.olivervscreeper.t2.utils.ConfigLoader;
 import org.bukkit.Bukkit;
@@ -36,6 +40,8 @@ public class TenJava extends JavaPlugin {
         ConfigLoader.loadConfig(getConfig());
 
         addStickRecipe(); //Add recipe for energy checker.
+
+        CurseHandler.loadCurses(); //Load curses
 
         //Finished, alert players if reload
         ChatUtils.broadcastMSG("Plugin Reloaded.");

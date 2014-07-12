@@ -1,5 +1,6 @@
 package com.tenjava.entries.olivervscreeper.t2.powerups;
 
+import com.tenjava.entries.olivervscreeper.t2.handlers.CurseHandler;
 import com.tenjava.entries.olivervscreeper.t2.handlers.EnergyTracker;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -21,12 +22,13 @@ public class InstaKillPowerup implements Listener{
         if(e.getEntity().getType().equals(EntityType.PIG)) return;
         if(e.getEntity() instanceof Player) return;
         if(!(e.getDamager() instanceof Player)) return;
-        if(!isHoldingTracker((Player) e.getDamager()));
+        if(!isHoldingTracker((Player) e.getDamager())) return;
         if(!(EnergyTracker.getEnergy((Player) e.getDamager()) >= 80)) return;
 
         EnergyTracker.usePoints((Player) e.getDamager(),80);
         e.getEntity().setFallDistance(500F);
         playPowerupSound((Player) e.getDamager());
+        CurseHandler.attemptCurse((Player) e.getDamager());
     }
 
     public boolean isHoldingTracker(Player p){

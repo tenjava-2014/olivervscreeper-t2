@@ -1,5 +1,6 @@
 package com.tenjava.entries.olivervscreeper.t2.powerups;
 
+import com.tenjava.entries.olivervscreeper.t2.handlers.CurseHandler;
 import com.tenjava.entries.olivervscreeper.t2.handlers.EnergyTracker;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -38,13 +39,14 @@ public class JumpPowerup implements Listener{
         e.getPlayer().setVelocity(e.getPlayer().getVelocity().setY(4));
         launched.add(e.getPlayer());
         playPowerupSound(e.getPlayer());
+        CurseHandler.attemptCurse(e.getPlayer());
     }
 
     @EventHandler
     public void onDamage(EntityDamageEvent e){
         if(!(e.getEntity() instanceof Player)) return;
         Player p = (Player) e.getEntity();
-        if(launched.contains(p)) launched.remove(p); e.setCancelled(true);
+        if(launched.contains(p)){ launched.remove(p); e.setCancelled(true);}
     }
 
     public void playPowerupSound(Player p){

@@ -1,6 +1,7 @@
 package com.tenjava.entries.olivervscreeper.t2.powerups;
 
 import com.tenjava.entries.olivervscreeper.t2.TenJava;
+import com.tenjava.entries.olivervscreeper.t2.handlers.CurseHandler;
 import com.tenjava.entries.olivervscreeper.t2.handlers.EnergyTracker;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -33,6 +34,7 @@ public class FlyPowerup implements Listener{
         PLAYER.setAllowFlight(true);
         PLAYER.setFlying(true);
         playPowerupSound(PLAYER);
+        CurseHandler.attemptCurse((Player) e.getDamager());
 
         Bukkit.getScheduler().scheduleSyncDelayedTask(TenJava.plugin,
                 new Runnable() {

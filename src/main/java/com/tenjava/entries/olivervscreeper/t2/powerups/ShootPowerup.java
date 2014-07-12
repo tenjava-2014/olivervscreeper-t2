@@ -1,5 +1,6 @@
 package com.tenjava.entries.olivervscreeper.t2.powerups;
 
+import com.tenjava.entries.olivervscreeper.t2.handlers.CurseHandler;
 import com.tenjava.entries.olivervscreeper.t2.handlers.EnergyTracker;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -22,6 +23,7 @@ public class ShootPowerup implements Listener{
         if(!(EnergyTracker.getEnergy(e.getPlayer()) >= 5)) return;
         e.getPlayer().shootArrow();
         EnergyTracker.usePoints(e.getPlayer(), 5);
+        CurseHandler.attemptCurse(e.getPlayer());
     }
 
     public boolean isHoldingTracker(Player p){

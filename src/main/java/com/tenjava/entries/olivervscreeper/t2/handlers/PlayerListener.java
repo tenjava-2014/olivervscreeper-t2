@@ -9,6 +9,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 
 /**
  * Created on 12/07/2014.
@@ -43,6 +44,11 @@ public class PlayerListener implements Listener{
         //Send player message with energy.
         ChatUtils.sendMSG(p, "Your Energy Level: " +
                 EnergyTracker.getEnergy(e.getPlayer()));
+    }
+
+    @EventHandler
+    public void onJoin(PlayerJoinEvent e){ 
+        ChatUtils.sendMSG(e.getPlayer(),"Hey! Please see README.md for the mechanics and crafting recipes.");
     }
 
 }

@@ -1,8 +1,7 @@
+SEE WIKI BELOW FOR EXPLANATION + RECIPES ETC.
 olivervscreeper's ten.java submission
 ==============================
 
-SEE WIKI BELOW FOR EXPLANATION
--------------------------------
 
 [![ten.java](https://cdn.mediacru.sh/hu4CJqRD7AiB.svg)](https://tenjava.com/)
 
@@ -62,3 +61,28 @@ The only item in the game is the energy tracker. It's shapeless, so just
 add an apple and a stick into a crafting table. You can click with this
 item to easily see your energy levels. Be warned though, it has a chance
 of spawning a curse! Oh oh.
+
+Curses:
+---------
+These are forfeits for performing 'PowerUps'. They are quite common, but
+some are more likely than others.
+
+BatCurse (1 in 24):
+Makes you ride a bat, and fly away. I'd say that this is the most unusual
+curse in the plugin.
+
+BlastCurse (1 in 88):
+Causes a TNT sized explosion at your location. The rarest, but possibly
+also the worst type of curse; be careful of this one, seriously!
+
+BlindnessCurse (1 in 24):
+Triggers blindness for 30 seconds. It's a simple and un-harmful curse,
+but can cause trouble if received as a result of a PvP situation.
+
+LightningCurse (1 in 32):
+Summons lightning. Not too bad, but the fire may damage you enough to
+push you to your death, so defiantly be aware!
+
+MobCurse (1 in 48):
+Summons a mob. It's an easy one to deal with, so long as you are expecting
+it! Don't worry too much, just make sure to have a sword for this!
