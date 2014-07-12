@@ -2,6 +2,7 @@ olivervscreeper's ten.java submission
 ==============================
 
 SEE WIKI BELOW FOR EXPLANATION
+-------------------------------
 
 [![ten.java](https://cdn.mediacru.sh/hu4CJqRD7AiB.svg)](https://tenjava.com/)
 
@@ -56,6 +57,7 @@ damage, it's hard to control, could leave you stuck or even in lava!
 
 Crafting:
 ----------
+![Alt text](http://puu.sh/a8eYx/aa6d9848f5.png "Crafting Recipe")
 The only item in the game is the energy tracker. It's shapeless, so just
 add an apple and a stick into a crafting table. You can click with this
 item to easily see your energy levels. Be warned though, it has a chance
