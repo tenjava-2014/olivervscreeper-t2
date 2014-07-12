@@ -1,6 +1,8 @@
 package com.tenjava.entries.olivervscreeper.t2.powerups;
 
+import com.tenjava.entries.olivervscreeper.t2.TenJava;
 import com.tenjava.entries.olivervscreeper.t2.handlers.EnergyTracker;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.EntityType;
@@ -14,19 +16,33 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
  *
  * @author OliverVsCreeper
  */
-public class InstaKillPowerup implements Listener{
+public class FlyPowerup implements Listener{
 
     @EventHandler
     public void onDamage(EntityDamageByEntityEvent e){
-        if(e.getEntity().getType().equals(EntityType.PIG)) return;
-        if(e.getEntity() instanceof Player) return;
+        if(!(e.getEntity().getType().equals(EntityType.PIG))) return;
         if(!(e.getDamager() instanceof Player)) return;
         if(!isHoldingTracker((Player) e.getDamager()));
-        if(!(EnergyTracker.getEnergy((Player) e.getDamager()) >= 80)) return;
+        if(!(EnergyTracker.getEnergy((Player) e.getDamager()) >= 200)) return;
 
-        EnergyTracker.usePoints((Player) e.getDamager(),80);
-        e.getEntity().setFallDistance(500F);
-        playPowerupSound((Player) e.getDamager());
+        final Player PLAYER = (Player) e.getDamager();
+
+        EnergyTracker.usePoints(PLAYER,200);
+        e.setCancelled(true);
+
+        PLAYER.setAllowFlight(true);
+        PLAYER.setFlying(true);
+        playPowerupSound(PLAYER);
+
+        Bukkit.getScheduler().scheduleSyncDelayedTask(TenJava.plugin,
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        PLAYER.setFlying(false);
+                        PLAYER.setAllowFlight(false);
+                    }
+                },200);
+
     }
 
     public boolean isHoldingTracker(Player p){

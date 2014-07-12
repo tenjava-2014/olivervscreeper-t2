@@ -1,9 +1,7 @@
 package com.tenjava.entries.olivervscreeper.t2;
 
 import com.tenjava.entries.olivervscreeper.t2.handlers.PlayerListener;
-import com.tenjava.entries.olivervscreeper.t2.powerups.InstaKillPowerup;
-import com.tenjava.entries.olivervscreeper.t2.powerups.JumpPowerup;
-import com.tenjava.entries.olivervscreeper.t2.powerups.ShootPowerup;
+import com.tenjava.entries.olivervscreeper.t2.powerups.*;
 import com.tenjava.entries.olivervscreeper.t2.utils.ChatUtils;
 import com.tenjava.entries.olivervscreeper.t2.utils.ConfigLoader;
 import org.bukkit.Bukkit;
@@ -60,6 +58,7 @@ public class TenJava extends JavaPlugin {
         registerPowerup(new InstaKillPowerup());
         registerPowerup(new JumpPowerup());
         registerPowerup(new ShootPowerup());
+        registerPowerup(new FlyPowerup());
     }
 
     public void registerPowerup(Object classObject){

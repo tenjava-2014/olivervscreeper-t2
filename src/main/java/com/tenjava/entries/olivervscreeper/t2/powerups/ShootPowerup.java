@@ -16,7 +16,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 public class ShootPowerup implements Listener{
 
     @EventHandler
-    public void onDamage(PlayerInteractEvent e){
+    public void onInteract(PlayerInteractEvent e){
         if(!isHoldingTracker(e.getPlayer())) return;
         if(!e.getAction().equals(Action.LEFT_CLICK_AIR)) return;
         if(!(EnergyTracker.getEnergy(e.getPlayer()) >= 5)) return;

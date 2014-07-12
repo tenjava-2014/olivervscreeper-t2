@@ -1,11 +1,13 @@
 olivervscreeper's ten.java submission
 ==============================
 
+SEE GIT WIKI FOR FULL PLUGIN INSTRUCTIONS AND EXPLANATION
+
 [![ten.java](https://cdn.mediacru.sh/hu4CJqRD7AiB.svg)](https://tenjava.com/)
 
 This is a submission for the 2014 ten.java contest.
 
-- __Theme:__
+- __Theme:__ Energy and Uses in the Minecraft World
 - __Time:__ Time 2 (7/12/2014 09:00 to 7/12/2014 19:00 UTC)
 - __MC Version:__ 1.7.9 (latest Bukkit beta)
 - __Stream URL:__ https://twitch.tv/olivervscreeper
@@ -29,7 +31,7 @@ Usage
 -----
 
 1. Install plugin
-2. Do things with it
+2. See the GitHub Wiki, for full plugin instructions!
 
 <!-- Hi, olivervscreeper! This is the default README for every ten.java submission. -->
 <!-- We encourage you to edit this README with some information about your submission – keep in mind you'll be scored on documentation! -->
