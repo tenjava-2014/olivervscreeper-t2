@@ -17,6 +17,8 @@ public class ConfigLoader {
 
     public static void loadConfig(final FileConfiguration CONFIGFILE){
 
+        TenJava.plugin.saveDefaultConfig(); //Save config from jar template.
+
         //Load block values.
         for(String blocks : CONFIGFILE.getStringList("energyValues")){
             try {
