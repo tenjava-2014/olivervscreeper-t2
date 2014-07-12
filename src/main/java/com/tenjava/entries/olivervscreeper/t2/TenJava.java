@@ -4,6 +4,12 @@ import com.tenjava.entries.olivervscreeper.t2.listeners.PlayerListener;
 import com.tenjava.entries.olivervscreeper.t2.utils.ChatUtils;
 import com.tenjava.entries.olivervscreeper.t2.utils.ConfigLoader;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.ShapelessRecipe;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -26,8 +32,23 @@ public class TenJava extends JavaPlugin {
         //Load config
         ConfigLoader.loadConfig(getConfig());
 
+        addStickRecipe(); //Add recipe for energy checker.
+
         //Finished, alert players if reload
         ChatUtils.broadcastMSG("Plugin Reloaded.");
+    }
+
+    public void addStickRecipe(){
+        ItemStack stick = new ItemStack(Material.STICK);
+        ItemMeta im = stick.getItemMeta();
+        im.addEnchant(Enchantment.LUCK,1,false);
+        im.setDisplayName(ChatColor.GREEN + "Energy Detector");
+        stick.setItemMeta(im); //Add enchantment and display name.
+
+        ShapelessRecipe Sr = new ShapelessRecipe(stick); //Recipe with result
+        Sr.addIngredient(Material.STICK); //Add ingredients
+        Sr.addIngredient(Material.APPLE);
+        Bukkit.addRecipe(Sr); //Add recipe
     }
 
 }
