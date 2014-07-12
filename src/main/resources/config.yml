@@ -13,6 +13,3 @@ energyValues:
   - '52:25'
   - '122:1000'
   - '7:9999999'
-
-##If true, energy for player can not fall below 0.
-decreaseLimit: false

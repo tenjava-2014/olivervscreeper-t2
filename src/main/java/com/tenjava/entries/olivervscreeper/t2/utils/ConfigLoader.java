@@ -13,7 +13,6 @@ import java.util.HashMap;
 public class ConfigLoader {
 
     public static HashMap<Integer,Integer> IDValue = new HashMap<Integer, Integer>();
-    public static boolean decreaseLimited;
 
     public static void loadConfig(final FileConfiguration CONFIGFILE){
 
@@ -29,9 +28,6 @@ public class ConfigLoader {
                 continue;
             }
         }
-
-        decreaseLimited = CONFIGFILE.getBoolean("decreaseLimit");
-        TenJava.plugin.getLogger().info("Preventing energy below 0: " + decreaseLimited);
 
     }
 

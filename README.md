@@ -1,7 +1,7 @@
 olivervscreeper's ten.java submission
 ==============================
 
-SEE GIT WIKI FOR FULL PLUGIN INSTRUCTIONS AND EXPLANATION
+SEE WIKI BELOW FOR EXPLANATION
 
 [![ten.java](https://cdn.mediacru.sh/hu4CJqRD7AiB.svg)](https://tenjava.com/)
 
@@ -15,23 +15,48 @@ This is a submission for the 2014 ten.java contest.
 <!-- put chosen theme above -->
 
 ---------------------------------------
+WIKI - Ore-A
 
-Compilation
------------
+What is this plugin?
+---------------------
+The idea of this plugin is that players can mine blocks, and collect energy
+from the world by doing this. Different blocks yield different results,
+for example, stone which yields 2 energy. Collated energy can then be used
+by players to perform new, cool actions, listed below.
 
-- Download & Install [Maven 3](http://maven.apache.org/download.html)
-- Clone the repository: `git clone https://github.com/tenjava/olivervscreeper-t2`
-- Compile and create the plugin package using Maven: `mvn`
+Configuration:
+---------------
+- In the 'Energy Values' section, the yield of each block type is defined.
+You can add outcomes of any block by specify it's id, a ':', and then
+the energy yield.
 
-Maven will download all required dependencies and build a ready-for-use plugin package!
+PowerUps:
+--------------
 
----------------------------------------
+When pigs fly - 200EG:
+By punching a pig, you can activate flying for 10 seconds. After this period,
+you will fall without warning, so be sure to land in a safe place where
+you won't take fall damage!
 
-Usage
------
+The Awesome Archer - 5EG:
+By left clicking with the energy tracker, you can shoot an arrow from your
+position. You can't change the velocity, it's always the same, so get used
+to it!
 
-1. Install plugin
-2. See the GitHub Wiki, for full plugin instructions!
+InstaKill - 80EG:
+If you hit a mob with the energy tracker, and have enough energy, he will
+take 500 blocks worth of fall damage- this will kill most mobs, but be
+warned, you can't use it to kill any bosses!
 
-<!-- Hi, olivervscreeper! This is the default README for every ten.java submission. -->
-<!-- We encourage you to edit this README with some information about your submission – keep in mind you'll be scored on documentation! -->
+BungeeCord - 25EG:
+If you press shift while holding the energy tracker, you will be launched
+to a great distance in the air! Be warned, while you won't take fall
+damage, it's hard to control, could leave you stuck or even in lava!
+
+
+Crafting:
+----------
+The only item in the game is the energy tracker. It's shapeless, so just
+add an apple and a stick into a crafting table. You can click with this
+item to easily see your energy levels. Be warned though, it has a chance
+of spawning a curse! Oh oh.
