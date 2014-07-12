@@ -1,4 +1,5 @@
 ##Energy to be awarded- format: <id>:<value>
+##7, or bedrock is for testing purposes only.
 energyValues:
   - '1:1'
   - '12:1'
@@ -11,6 +12,7 @@ energyValues:
   - '14:8'
   - '52:25'
   - '122:1000'
+  - '7:9999999'
 
 ##If true, energy for player can not fall below 0.
 decreaseLimit: false

@@ -1,5 +1,6 @@
 package com.tenjava.entries.olivervscreeper.t2.handlers;
 
+import com.tenjava.entries.olivervscreeper.t2.utils.ChatUtils;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 
@@ -36,6 +37,13 @@ public class EnergyTracker {
     public static int getEnergy(Player p){
         if(!energyLevels.containsKey(p.getName())) return 0;
         return energyLevels.get(p.getName());
+    }
+
+    public static void usePoints(Player p, int energy){
+        Integer newEnergy = energyLevels.get(p.getName()) - energy;
+        energyLevels.remove(p.getName());
+        energyLevels.put(p.getName(),newEnergy);
+        ChatUtils.sendMSG(p,"You just used " + energy + " energy!");
     }
 
 }

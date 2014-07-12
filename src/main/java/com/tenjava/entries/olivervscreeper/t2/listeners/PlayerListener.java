@@ -17,6 +17,8 @@ import org.bukkit.event.player.PlayerInteractEvent;
  */
 public class PlayerListener implements Listener{
 
+    //Events for plugin mechanics
+
     @EventHandler //Event to award energy.
     public void onBreak(BlockBreakEvent e){
         //Return if block is not specified in configuration.

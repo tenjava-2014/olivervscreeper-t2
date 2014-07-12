@@ -1,6 +1,7 @@
 package com.tenjava.entries.olivervscreeper.t2;
 
 import com.tenjava.entries.olivervscreeper.t2.listeners.PlayerListener;
+import com.tenjava.entries.olivervscreeper.t2.listeners.PowerupListener;
 import com.tenjava.entries.olivervscreeper.t2.utils.ChatUtils;
 import com.tenjava.entries.olivervscreeper.t2.utils.ConfigLoader;
 import org.bukkit.Bukkit;
@@ -28,6 +29,8 @@ public class TenJava extends JavaPlugin {
         plugin = this; //Save plugin for other classes.
         Bukkit.getPluginManager()
                 .registerEvents(new PlayerListener(),this); //Register listener
+        Bukkit.getPluginManager()
+                .registerEvents(new PowerupListener(),this); //Register listener
 
         //Load config
         ConfigLoader.loadConfig(getConfig());
